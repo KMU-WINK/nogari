@@ -5,9 +5,9 @@ const Plates = memo(({penaltyList,opendList,unOpendList}) => {
 
   return (
     <ul>
-        
-      {penaltyList.map((item,index)=>{
-        return <button key={penaltyList[index].id}>{penaltyList[index].penalty}</button>
+      
+      {unOpendList.map((item,index)=>{
+        return <button key={unOpendList[index].id}>{unOpendList[index].penalty}</button>
       })}
     </ul>
   )

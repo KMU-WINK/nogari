@@ -68,8 +68,7 @@ const RottenPlatesGame = () => {
 
 
       <section className="Plates">
-        {status === statusCode.GAMESTART ? <Plates penaltyList={penaltyList} opendList={opendList} unOpendList={unOpendList}></Plates> : null}
-        
+        {status > statusCode.INIT ? <Plates penaltyList={penaltyList} opendList={opendList} unOpendList={unOpendList}></Plates> : null}
       </section>
 
       <section className="Cards">
