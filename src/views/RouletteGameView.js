@@ -1,11 +1,11 @@
 import React from 'react';
-import RouletteInput from '../components/RouletteInput';
+import RottenPlatesGame from '../components/RottenPlatesGame';
 
 export default function RouletteGameView() {
   return (
     <>
       <div>
-        <RouletteInput/>
+        <RottenPlatesGame/>
       </div>
     </>
   );
