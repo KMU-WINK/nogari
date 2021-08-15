@@ -1,0 +1,86 @@
+.MainContainer {
+  width: 960px;
+  height: 740px;
+  border: blue 1px solid;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.MainContainer .message {
+  font-size: 24px;
+}
+
+.platesContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 992px;
+  height: 289.99px;
+  border: blue 1px solid;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.platesContainer .cell {
+  cursor: pointer;
+  border-radius: 50%;
+  border: blue solid 2px;
+  height: 81.99px;
+  width: 127.75px;
+  font-size: 35px;
+  text-align: center;
+  line-height: 81.99px;
+}
+
+.platesContainer .cell:hover {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  -webkit-transition: scale 0.25s ease-in;
+  transition: scale 0.25s ease-in;
+}
+
+.UserContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 932px;
+  height: 218px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.UserContainer .userWrapper {
+  border: 3px solid red;
+  width: 144px;
+  height: 218px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=RottenPlatesGame.css.map */

@@ -1,0 +1,67 @@
+.MainContainer {
+  width: 960px;
+  height: 740px;
+  border: blue 1px solid;
+  position : absolute;
+  left : 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  
+  .message { 
+    font-size: 24px;
+  }
+  
+}
+
+
+.platesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 992px;
+  height: 289.99px;
+  border: blue 1px solid;
+  justify-content: space-around;
+  .cell {
+    cursor: pointer;
+    border-radius: 50%;
+    border: blue solid 2px;
+    height: 81.99px;
+    width: 127.75px;
+    font-size: 35px;
+    text-align: center;
+    line-height: 81.99px;
+
+    
+    
+    &:hover {
+            
+      transform: scale(1.5);
+      transition: scale 0.25s ease-in;
+      
+    }
+  }
+}
+
+
+.UserContainer{
+  display: flex;
+  width: 932px;
+  height: 218px;
+  justify-content: space-between;
+  .userWrapper {
+    border: 3px solid red;
+    width: 144px;
+    height: 218px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    .userImage {}
+
+    .userName {}
+  }
+}
+
