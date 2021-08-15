@@ -6,11 +6,9 @@ const getCellStyle = (code) => {
 
   if (code === CODE.NORMAL) {
     return {
-      background : '#444',
     }
   } else if (code === CODE.CLICKED) {
     return {
-      background : '#444',
       pointerEvents : 'none',
       opacity : '0.5',
     }
@@ -39,10 +37,9 @@ const Cell = memo(( {cellId,cellIndex,cellPenalty} ) => {
 
   return (
     <>
-      <div style = {getCellStyle(table[cellIndex].status)}className="cell" onClick={onClickCell}>{cellPenalty}</div>
+      <div style = {getCellStyle(table[cellIndex].status)} className="cell" onClick={onClickCell}></div>
     </>
   )
-
 })
 
 export default Cell;

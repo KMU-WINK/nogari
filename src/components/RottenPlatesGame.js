@@ -1,4 +1,4 @@
-import react, {useState,createContext,memo} from 'react';
+import react, {useState,createContext,memo,useRef, useEffect} from 'react';
 import Table from './Table';
 import Users from './Users';
 import './css/RottenPlatesGame.css'
@@ -42,6 +42,10 @@ const RottenPlatesGame = memo(() => {
   const [curUser,setCurUser] = useState(-1);
   const [userlist,setUserlist] = useState(ServerUsers);
   const [selectedPlate,setSelectPlate] = useState();
+  const [sec,setSec] = useState(15);
+  const [timeout,setTimeout] = useState(false);
+
+  const timer = useRef();
 
   const initData = {
     table,
@@ -60,22 +64,53 @@ const RottenPlatesGame = memo(() => {
     setSelectPlate,
   }
 
-  const onClickNextBtn = () => {
+  useEffect(()=>{
+    if ( gameStatus === END_GAME) {
+      clearInterval(timer.current);
+      setSec(0);
+    }
+    if(timeout && sec ==0) {
+      clearInterval(timer.current);
+      setSec(15);
+    }
 
+    if(sec == 0 ){
+      clearInterval(timer.current);
+      setTimeout(true);
+    }
+    if(sec>0) {
+      timer.current = setInterval(()=>{
+        setSec((prev)=>prev-1);
+      },500);
+      setTimeout(false);
+    }
+    
+    return () => {
+      clearInterval(timer.current);
+    }
+  },[sec,curUser]);
+
+
+
+  
+
+  // 테스트를 위해 만든 버튼 (순서)
+  const onClickNextBtn = () => { 
+    
     if (gameStatus === INIT) {
-      setTable(SeverPenaltyList);
-      setUserlist(ServerUsers);
-      setMessage("벌칙룰렛 게입니다.");
-      setHalted(true);
-      setCurUser(-1);
-      setGameStatus(GAME_START);
-
-    } else if(gameStatus === GAME_START) {
-
       setHalted(true);
       setTable(shuffle(table));
       setCurUser((prev)=>prev+1);
+      setGameStatus(GAME_START);
+
+
+    } else if(gameStatus === GAME_START) {
+
+      setCurUser((prev)=>prev+1);
+      setHalted(true);
       setGameStatus(OTHER_TURN);
+
+
 
     } else if(gameStatus === OTHER_TURN) {
         if(curUser === 1) {
@@ -96,31 +131,12 @@ const RottenPlatesGame = memo(() => {
       }
   }
 
-  const onClickStartBtn = () => {
-    if (gameStatus === INIT) {
-      setHalted(true);
-      setTable(SeverPenaltyList);
-      setTable(shuffle(table));
-      setCurUser((prev)=>prev+1);
-      setGameStatus(GAME_START);
-    } else if (gameStatus === END_GAME) {
-      setHalted(true);
-      setTable(SeverPenaltyList);
-      setTable(shuffle(table));
-      // setCurUser((prev)=>prev+1);
-      setGameStatus(INIT);
-    }
-  }
-  
   return(
     <div className="MainContainer">
       <TableContext.Provider value={initData}>
-        {(gameStatus === OTHER_TURN ) || (gameStatus === MY_TRUN) ? <div className="message">{`${curUser} 차례입니다.`}</div> : <div className="message">썩은접시 찾기</div> }
-        <div className="GameStatus">gameStatus : {gameStatus}</div>
-        <div>curUser : {curUser} </div>
-        {gameStatus === INIT ? <button onClick={onClickStartBtn}>시작</button> : null}
-        {gameStatus === END_GAME ? <button onClick={onClickStartBtn}>다시하기</button> : null}
-        <button onClick={onClickNextBtn}>Next_Status</button>
+        {(gameStatus === OTHER_TURN ) || (gameStatus === MY_TRUN) || (gameStatus === GAME_START) ? <div className="message">{`${curUser} 차례입니다.`}</div> : <div className="message">썩은접시 찾기</div> }
+        {gameStatus !== INIT ? <div className="timer"> {sec} 초 남았습니다.</div> : null}
+        <button onClick={onClickNextBtn} className="nextBtn">Next_Status</button>
         <Table/>
         <Users/>
       </TableContext.Provider>

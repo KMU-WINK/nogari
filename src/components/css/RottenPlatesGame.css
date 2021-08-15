@@ -1,5 +1,5 @@
 .MainContainer {
-  width: 960px;
+  width: 822.22px;
   height: 740px;
   border: blue 1px solid;
   position: absolute;
@@ -20,8 +20,15 @@
           align-items: center;
 }
 
+.MainContainer .nextBtn {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+}
+
 .MainContainer .message {
   font-size: 24px;
+  color: #1a9659;
 }
 
 .platesContainer {
@@ -30,8 +37,8 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  width: 992px;
-  height: 289.99px;
+  width: 800px;
+  height: 233.86px;
   border: blue 1px solid;
   -ms-flex-pack: distribute;
       justify-content: space-around;
@@ -40,12 +47,13 @@
 .platesContainer .cell {
   cursor: pointer;
   border-radius: 50%;
-  border: blue solid 2px;
-  height: 81.99px;
-  width: 127.75px;
-  font-size: 35px;
+  border: red solid 1px;
+  height: 66.12px;
+  width: 103.03px;
+  font-size: 30px;
   text-align: center;
-  line-height: 81.99px;
+  line-height: 66.12px;
+  background-image: url("../PlatesGameImage/Plate.png");
 }
 
 .platesContainer .cell:hover {
@@ -59,17 +67,19 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 932px;
-  height: 218px;
+  width: 730px;
+  height: 170.57px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
 
 .UserContainer .userWrapper {
-  border: 3px solid red;
-  width: 144px;
-  height: 218px;
+  background-color: #022213;
+  border: 2px solid black;
+  border-radius: 10%;
+  width: 112.67px;
+  height: 170.57px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -82,5 +92,15 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.UserContainer .userWrapper .userImage {
+  width: 100px;
+  height: 116.45px;
+  border: blue 1px solid;
+}
+
+.UserContainer .userWrapper .userName {
+  color: #fcce3a;
 }
 /*# sourceMappingURL=RottenPlatesGame.css.map */
