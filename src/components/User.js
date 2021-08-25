@@ -9,6 +9,7 @@ import user5 from './PlatesGameImage/6.png';
 
 
 const getUserStyle = (index) => {
+
   if ( index == 0 ) {
     return {
     backgroundImage: `url(${user0})`,
@@ -42,12 +43,25 @@ const getUserStyle = (index) => {
   
 }
 
+const getUserWrapperStyle = (index,curIndex) => {
+  if (curIndex == index) {
+    return {
+      border: '5px yellow solid',
+    }
+  } else {
+    return {
+      border: '',
+    }
+  }
+}
+
 
 const User = memo(( {userId,userName,userIndex} ) => {
+  const {curUser,setCurUser,userlist,setUserList} = useContext(TableContext);
 
   return (
     <>
-      <div className="userWrapper" >
+      <div className = "userWrapper" style = {getUserWrapperStyle(userIndex, curUser)}>
         <div className="userImage" style={getUserStyle(userIndex)}>
         </div>
         <div className="userName">

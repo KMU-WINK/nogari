@@ -10,7 +10,7 @@ const Users = memo(() => {
   return (
     <>
     <div className="UserContainer">
-      {userlist.map((item,index)=>{return <User userIndex={index} userName={item.userName} userId={item.id}></User>})}
+      {userlist.map((item,index)=>{return <User userIndex={index} userName={item.userName} userId={item.id} userStatus={item.status}></User>})}
     </div>
     </>
   )

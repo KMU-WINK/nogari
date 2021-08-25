@@ -39,7 +39,6 @@
       flex-wrap: wrap;
   width: 800px;
   height: 233.86px;
-  border: blue 1px solid;
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
@@ -47,7 +46,6 @@
 .platesContainer .cell {
   cursor: pointer;
   border-radius: 50%;
-  border: red solid 1px;
   height: 66.12px;
   width: 103.03px;
   font-size: 30px;
@@ -97,7 +95,6 @@
 .UserContainer .userWrapper .userImage {
   width: 100px;
   height: 116.45px;
-  border: blue 1px solid;
 }
 
 .UserContainer .userWrapper .userName {
