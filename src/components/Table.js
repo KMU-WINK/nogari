@@ -1,5 +1,5 @@
 import react, {useContext,memo} from 'react';
-import {TableContext,CODE} from './RottenPlatesGame';
+import {TableContext} from './RottenPlatesGame';
 import Cell from "./Cell"
 
 const Table = memo(() => {

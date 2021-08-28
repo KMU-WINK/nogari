@@ -21,9 +21,16 @@ const shuffle = (myList) => {
   return temp;
 }
 
+const userColor = () => {
+  return { 
+    color: '#FCCE39',
+    // fontSize: "24px",
+  }
+}
+
 const SeverPenaltyList = [
-      {id: 0, penalty : "게임0", status : -1},{id: 1, penalty : "게임1", status : -1},{id: 2, penalty : "게임2", status : -1},{id: 3, penalty : "게임3", status : -1},{id: 4, penalty : "게임4", status : -1},
-      {id: 5, penalty : "게임5", status : -1},{id: 6, penalty : "게임6", status : -1},{id: 7, penalty : "게임7", status : -1},{id: 8, penalty : "게임8", status : -1},{id: 9, penalty : "게임9", status : -1},
+      {id: 0, penalty : "pass", status : -1},{id: 1, penalty : "pass", status : -1},{id: 2, penalty : "pass", status : -1},{id: 3, penalty : "pass", status : -1},{id: 4, penalty : "pass", status : -1},
+      {id: 5, penalty : "pass", status : -1},{id: 6, penalty : "pass", status : -1},{id: 7, penalty : "pass", status : -1},{id: 8, penalty : "pass", status : -1},{id: 9, penalty : "pass", status : -1},
       {id: 10, penalty : "게임10", status : -1},{id: 11, penalty : "게임11", status : -1},{id: 12, penalty : "게임12", status : -1},{id: 13, penalty : "게임13", status : -1},
       {id: 14, penalty : "게임14", status : -1},{id: 15, penalty : "게임15", status : -1},{id: 16, penalty : "게임16", status : -1},{id: 17, penalty : "게임17", status : -1},
       {id: 18, penalty : "게임18", status : -1},{id: 19, penalty : "게임19", status : -1},{id: 20, penalty : "게임20", status : -1}
@@ -41,7 +48,7 @@ const RottenPlatesGame = memo(() => {
   const [halted,setHalted] = useState(true);
   const [curUser,setCurUser] = useState(-1);
   const [userlist,setUserlist] = useState(ServerUsers);
-  const [selectedPlate,setSelectPlate] = useState();
+  const [selectedPlate,setSelectPlate] = useState({isPass : true, id : -1 ,penalty : "default"});
   const [sec,setSec] = useState(15);
   const [timeout,setTimeout] = useState(false);
 
@@ -64,31 +71,31 @@ const RottenPlatesGame = memo(() => {
     setSelectPlate,
   }
 
-  useEffect(()=>{
-    if ( gameStatus === END_GAME) {
-      clearInterval(timer.current);
-      setSec(0);
-    }
-    if(timeout && sec ==0) {
-      clearInterval(timer.current);
-      setSec(15);
-    }
+  // useEffect(()=>{
+  //   if ( gameStatus === END_GAME) {
+  //     clearInterval(timer.current);
+  //     setSec(0);
+  //   }
+  //   if(timeout && sec ==0) {
+  //     clearInterval(timer.current);
+  //     setSec(15);
+  //   }
 
-    if(sec == 0 ){
-      clearInterval(timer.current);
-      setTimeout(true);
-    }
-    if(sec>0) {
-      timer.current = setInterval(()=>{
-        setSec((prev)=>prev-1);
-      },500);
-      setTimeout(false);
-    }
+  //   if(sec == 0 ){
+  //     clearInterval(timer.current);
+  //     setTimeout(true);
+  //   }
+  //   if(sec>0) {
+  //     timer.current = setInterval(()=>{
+  //       setSec((prev)=>prev-1);
+  //     },500);
+  //     setTimeout(false);
+  //   }
     
-    return () => {
-      clearInterval(timer.current);
-    }
-  },[sec,curUser]);
+  //   return () => {
+  //     clearInterval(timer.current);
+  //   }
+  // },[sec,curUser]);
 
 
 
@@ -131,19 +138,27 @@ const RottenPlatesGame = memo(() => {
       }
   }
 
+  const onClickStartBtn = () => {
+
+  }
+
+
+
+
   return(
+
     <div className="MainContainer">
       <TableContext.Provider value={initData}>
-        {(gameStatus === OTHER_TURN ) || (gameStatus === MY_TRUN) || (gameStatus === GAME_START) ? <div className="message">{`${curUser} 차례입니다.`}</div> : <div className="message">썩은접시 찾기</div> }
+        {(gameStatus === OTHER_TURN ) || (gameStatus === MY_TRUN) || (gameStatus === GAME_START) ? <div className="message"> <span style={userColor()}>{curUser}</span> 차례입니다. 접시를 선택해주세요</div> : <div className="message">썩은접시 찾기</div> }
         {gameStatus !== INIT ? <div className="timer"> {sec} 초 남았습니다.</div> : null}
         <button onClick={onClickNextBtn} className="nextBtn">Next_Status</button>
+        {/* <button onClick={onClickStartBtn} className="startBtn">START</button> */}
         <Table/>
         <Users/>
       </TableContext.Provider>
     </div>
   )
 })
-
 
 
 

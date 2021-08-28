@@ -1,5 +1,8 @@
 import react, {useContext,memo} from 'react';
 import {TableContext,CODE, OTHER_TURN} from './RottenPlatesGame';
+import no from './PlatesGameImage/no.png';
+import pass from './PlatesGameImage/pass.png';
+
 
 const getCellStyle = (code) => {
 
@@ -15,6 +18,18 @@ const getCellStyle = (code) => {
   }
 }
 
+const getCellItemStyle = (status, penalty) => {
+  if (  status === CODE.CLICKED && penalty === "pass") {
+    return {
+      backgroundImage: `url(${pass})`,
+    }
+  } else if (status === CODE.CLICKED && penalty !== "pass") {
+    return {
+      backgroundImage: `url(${no})`,
+    }
+  }
+}
+
 
 const Cell = memo(( {cellId,cellIndex,cellPenalty} ) => {
   const {table,setTable,halted,setHalted,gameStatus,setGameStatus,curUser,setCurUser,selectPlate,setSelectPlate} = useContext(TableContext);
@@ -24,20 +39,36 @@ const Cell = memo(( {cellId,cellIndex,cellPenalty} ) => {
       return;
     }
     if(table[cellIndex].status === CODE.NORMAL) {
-      const temp = [...table];
-      temp[cellIndex].status = CODE.CLICKED;
-      setTable(temp);
-      setGameStatus(OTHER_TURN);
-      setCurUser((prev) => prev + 1);
-      setSelectPlate({cellId : cellId, cellPenalty : cellPenalty});
-      setHalted(true);
+      if (table[cellIndex].penalty === "pass") {
+        const temp = [...table];
+        temp[cellIndex].status = CODE.CLICKED;
+        setTable(temp);
+        setGameStatus(OTHER_TURN);
+        setCurUser((prev) => prev + 1);
+        setSelectPlate({ispass: true, cellId : cellId, cellPenalty : cellPenalty});
+        setHalted(true);
+
+      } else {
+        const temp = [...table];
+        temp[cellIndex].status = CODE.CLICKED;
+        setTable(temp);
+        setGameStatus(OTHER_TURN);
+        setCurUser((prev) => prev + 1);
+        setSelectPlate({ispass: false, cellId : cellId, cellPenalty : cellPenalty});
+        setHalted(true);
+      }
+
+      
     }
-    console.log("cellID : ", cellId, "cellIndex : ",cellIndex,"status : " ,table[cellIndex].status);
+    console.log("cellID : ", cellId, "cellIndex : ", cellIndex, "status : ", table[cellIndex].status, "cellPenalty : ", cellPenalty);
   }
 
   return (
     <>
-      <div style = {getCellStyle(table[cellIndex].status)} className="cell" onClick={onClickCell}></div>
+      <div style = {getCellStyle(table[cellIndex].status)} className="cell" onClick={onClickCell}>
+        <div className= "cellItem" style= {getCellItemStyle(table[cellIndex].status,cellPenalty)}></div>
+        <div className= "Plate"></div>
+      </div>
     </>
   )
 })

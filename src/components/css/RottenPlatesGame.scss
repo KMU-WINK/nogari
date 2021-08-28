@@ -31,13 +31,26 @@
   justify-content: space-around;
   .cell {
     cursor: pointer;
-    border-radius: 50%;
-    height: 66.12px;
-    width: 103.03px;
-    font-size: 30px;
-    text-align: center;
-    line-height: 66.12px;
-    background-image: url("../PlatesGameImage/Plate.png");
+    width: 106px;
+    height: 75px;
+    // background-image: url("../PlatesGameImage/Plate.png");
+    background-repeat : no-repeat;
+
+    .cellItem {
+      position: absolute;
+      background-image: url("../PlatesGameImage/PlateDefault.png");
+      background-repeat : no-repeat;
+      background-position: center;
+      width: 106px;
+      height: 75px;
+      transform: translateY(-50%);
+    }
+
+    .Plate {
+      background-image: url("../PlatesGameImage/Plate.png");
+      width: 105px;
+      height: 53px;
+    }
 
     &:hover {
             
