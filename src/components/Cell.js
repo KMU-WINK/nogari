@@ -1,5 +1,5 @@
 import react, {useContext,memo} from 'react';
-import {TableContext,CODE, OTHER_TURN} from './RottenPlatesGame';
+import {TableContext,CODE, OTHER_TURN, PASS, UNPASS} from './RottenPlatesGame';
 import no from './PlatesGameImage/no.png';
 import pass from './PlatesGameImage/pass.png';
 
@@ -38,6 +38,7 @@ const Cell = memo(( {cellId,cellIndex,cellPenalty} ) => {
     if (halted) {
       return;
     }
+    alert(`Result :  ${cellId} / ${cellPenalty}`);
     if(table[cellIndex].status === CODE.NORMAL) {
       if (table[cellIndex].penalty === "pass") {
         const temp = [...table];
@@ -47,6 +48,7 @@ const Cell = memo(( {cellId,cellIndex,cellPenalty} ) => {
         setCurUser((prev) => prev + 1);
         setSelectPlate({ispass: true, cellId : cellId, cellPenalty : cellPenalty});
         setHalted(true);
+        setGameStatus(PASS);
 
       } else {
         const temp = [...table];
@@ -56,6 +58,7 @@ const Cell = memo(( {cellId,cellIndex,cellPenalty} ) => {
         setCurUser((prev) => prev + 1);
         setSelectPlate({ispass: false, cellId : cellId, cellPenalty : cellPenalty});
         setHalted(true);
+        setGameStatus(UNPASS);
       }
 
       

@@ -2,6 +2,7 @@ import react, {useState,createContext,memo,useRef, useEffect} from 'react';
 import Table from './Table';
 import Users from './Users';
 import './css/RottenPlatesGame.css'
+import UnPassModal from './UnPassModal';
 
 export const TableContext = createContext();
 
@@ -14,6 +15,8 @@ export const GAME_START = "GAME_START";
 export const OTHER_TURN = "OTHER_TURN";
 export const MY_TRUN = "MY_TRUN";
 export const END_GAME = "END_GAME";
+export const PASS = "PASS";
+export const UNPASS = "UNPASS";
 
 const shuffle = (myList) => {
   const temp = [...myList];
@@ -51,6 +54,7 @@ const RottenPlatesGame = memo(() => {
   const [selectedPlate,setSelectPlate] = useState({isPass : true, id : -1 ,penalty : "default"});
   const [sec,setSec] = useState(15);
   const [timeout,setTimeout] = useState(false);
+  const [owner,setOwner] = useState(true); //방장 여부
 
   const timer = useRef();
 
@@ -69,6 +73,8 @@ const RottenPlatesGame = memo(() => {
     setUserlist,
     selectedPlate,
     setSelectPlate,
+    owner,
+    setOwner,
   }
 
   // useEffect(()=>{
@@ -120,7 +126,7 @@ const RottenPlatesGame = memo(() => {
 
 
     } else if(gameStatus === OTHER_TURN) {
-        if(curUser === 1) {
+        if(curUser === 1) { // 1번 user 차례 다음은 2번(MY_TURN) user 차례. 
           setCurUser((prev)=>prev+1);
           setGameStatus(MY_TRUN);
           setHalted(false);
@@ -129,7 +135,6 @@ const RottenPlatesGame = memo(() => {
         if (curUser === 5 ) {
           setGameStatus(END_GAME);
           setHalted(true);
-          alert(`Result :  ${selectedPlate.cellId} / ${selectedPlate.cellPenalty}`);
           return;
         }
         setCurUser((prev)=> prev+1);
@@ -144,20 +149,22 @@ const RottenPlatesGame = memo(() => {
 
 
 
-
   return(
-
     <div className="MainContainer">
       <TableContext.Provider value={initData}>
-        {(gameStatus === OTHER_TURN ) || (gameStatus === MY_TRUN) || (gameStatus === GAME_START) ? <div className="message"> <span style={userColor()}>{curUser}</span> 차례입니다. 접시를 선택해주세요</div> : <div className="message">썩은접시 찾기</div> }
+        {(gameStatus === OTHER_TURN ) || (gameStatus === MY_TRUN) || (gameStatus === GAME_START) ? <div className="message"> <span style={userColor()}>{ServerUsers[curUser].userName}</span> 차례입니다. 접시를 선택해주세요</div> : <div className="message">썩은접시 찾기</div> }
         {gameStatus !== INIT ? <div className="timer"> {sec} 초 남았습니다.</div> : null}
         <button onClick={onClickNextBtn} className="nextBtn">Next_Status</button>
         {/* <button onClick={onClickStartBtn} className="startBtn">START</button> */}
         <Table/>
         <Users/>
+        {gameStatus === UNPASS && <UnPassModal/>}
       </TableContext.Provider>
     </div>
   )
+
+
+
 })
 
 
