@@ -48,7 +48,7 @@ const Cell = memo(( {cellId,cellIndex,cellPenalty} ) => {
         setCurUser((prev) => prev + 1);
         setSelectPlate({ispass: true, cellId : cellId, cellPenalty : cellPenalty});
         setHalted(true);
-        setGameStatus(PASS);
+        setGameStatus(OTHER_TURN);
 
       } else {
         const temp = [...table];
@@ -60,8 +60,6 @@ const Cell = memo(( {cellId,cellIndex,cellPenalty} ) => {
         setHalted(true);
         setGameStatus(UNPASS);
       }
-
-      
     }
     console.log("cellID : ", cellId, "cellIndex : ", cellIndex, "status : ", table[cellIndex].status, "cellPenalty : ", cellPenalty);
   }
