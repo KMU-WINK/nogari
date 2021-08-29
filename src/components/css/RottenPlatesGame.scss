@@ -1,7 +1,7 @@
 .UnPassModal {
   width: 822.22px;
   height: 740px;
-  border: red 1px solid;
+  // border: red 1px solid;
   // background-color: black;
   background-image: url("../PlatesGameImage/TrashDummy.png");
   background-repeat: no-repeat;
@@ -110,6 +110,7 @@
     align-items: center;
     color: #1B9659;
     .timerImage {
+      visibility: hidden;
       display:flex;
       justify-content: center;
       align-items: center;

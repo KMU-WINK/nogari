@@ -147,7 +147,7 @@ const RottenPlatesGame = memo(() => {
         {(gameStatus === OTHER_TURN ) || (gameStatus === MY_TRUN) || (gameStatus === GAME_START) ? <div className="message"> <span style={userColor()}>{ServerUsers[curUser].userName}</span> 차례입니다. 접시를 선택해주세요</div> : <div className="message">썩은접시 찾기</div> }
         {gameStatus !== INIT ?
         <div className="timerContainer">
-          {sec <= 5 && <div className="timerImage">{sec}</div>}
+          {sec <= 5 ? <div className="timerImage" style={{visibility : "visible"}}>{sec}</div> : <div className="timerImage">{sec}</div>}
           <div className="timerMessage"> {sec} 초 남았습니다.</div> 
         </div>
         : null}

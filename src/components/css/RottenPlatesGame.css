@@ -1,7 +1,6 @@
 .UnPassModal {
   width: 822.22px;
   height: 740px;
-  border: red 1px solid;
   background-image: url("../PlatesGameImage/TrashDummy.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -155,6 +154,7 @@
 }
 
 .MainContainer .timerContainer .timerImage {
+  visibility: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
