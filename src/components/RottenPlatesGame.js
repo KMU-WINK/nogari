@@ -57,6 +57,7 @@ const RottenPlatesGame = memo(() => {
   const [owner,setOwner] = useState(true); //방장 여부
 
   const timer = useRef();
+  const setTimer = useRef();
 
   const initData = {
     table,
@@ -77,35 +78,26 @@ const RottenPlatesGame = memo(() => {
     setOwner,
   }
 
-  // useEffect(()=>{
-  //   if ( gameStatus === END_GAME) {
-  //     clearInterval(timer.current);
-  //     setSec(0);
-  //   }
-  //   if(timeout && sec ==0) {
-  //     clearInterval(timer.current);
-  //     setSec(15);
-  //   }
+  const myTimer = () => {
+    clearInterval(setTimer.current);
+    setSec(15);
+    setTimer.current = setInterval(()=>{
+      setSec((prev)=> prev-1);
+    },1000);
+  }
 
-  //   if(sec == 0 ){
-  //     clearInterval(timer.current);
-  //     setTimeout(true);
-  //   }
-  //   if(sec>0) {
-  //     timer.current = setInterval(()=>{
-  //       setSec((prev)=>prev-1);
-  //     },500);
-  //     setTimeout(false);
-  //   }
-    
-  //   return () => {
-  //     clearInterval(timer.current);
-  //   }
-  // },[sec,curUser]);
+  useEffect(()=>{
+    myTimer();
+    return ()=>{
+      clearInterval(setTimer.current);
+    }
+  },[curUser]);
 
-
-
-  
+  useEffect(()=>{
+    if(sec<=0){
+      clearInterval(setTimer.current);
+    }
+  },[sec]);
 
   // 테스트를 위해 만든 버튼 (순서)
   const onClickNextBtn = () => { 
@@ -153,7 +145,12 @@ const RottenPlatesGame = memo(() => {
     <div className="MainContainer">
       <TableContext.Provider value={initData}>
         {(gameStatus === OTHER_TURN ) || (gameStatus === MY_TRUN) || (gameStatus === GAME_START) ? <div className="message"> <span style={userColor()}>{ServerUsers[curUser].userName}</span> 차례입니다. 접시를 선택해주세요</div> : <div className="message">썩은접시 찾기</div> }
-        {gameStatus !== INIT ? <div className="timer"> {sec} 초 남았습니다.</div> : null}
+        {gameStatus !== INIT ?
+        <div className="timerContainer">
+          {sec <= 5 && <div className="timerImage">{sec}</div>}
+          <div className="timerMessage"> {sec} 초 남았습니다.</div> 
+        </div>
+        : null}
         <button onClick={onClickNextBtn} className="nextBtn">Next_Status</button>
         {/* <button onClick={onClickStartBtn} className="startBtn">START</button> */}
         <Table/>

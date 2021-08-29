@@ -103,6 +103,34 @@
   align-items: center;
   z-index: 80;
 
+  .timerContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: #1B9659;
+    .timerImage {
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url('../PlatesGameImage/timer.png');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      font-size: 25px;
+      width: 65px;
+      height: 55.77px;
+      margin-bottom: 10px;
+
+    }
+    .timerMessage{
+      font-size: 14px;
+    }
+
+
+  }
+
+
   .nextBtn {
     position: absolute;
     left : 30px;

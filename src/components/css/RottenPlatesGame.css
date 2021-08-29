@@ -138,6 +138,46 @@
   z-index: 80;
 }
 
+.MainContainer .timerContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #1B9659;
+}
+
+.MainContainer .timerContainer .timerImage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url("../PlatesGameImage/timer.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-size: 25px;
+  width: 65px;
+  height: 55.77px;
+  margin-bottom: 10px;
+}
+
+.MainContainer .timerContainer .timerMessage {
+  font-size: 14px;
+}
+
 .MainContainer .nextBtn {
   position: absolute;
   left: 30px;
