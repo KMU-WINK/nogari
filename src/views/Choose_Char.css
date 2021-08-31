@@ -4,15 +4,14 @@ body{
     width: 100vw;
     height: 100vh;
 }
-.main{
+.choose_main{
     display: flex;
-    width: 960px;
+    width: 822px;
     height: 740px;
     overflow: hidden;
-    top: 20%;
-    left: 30%;
+    align-items: center;
     font-family: DungGeunMo;
-    float: left;
+    margin: 0 auto;
 }
 .sel_header{
     justify-content: space-between;
@@ -20,7 +19,7 @@ body{
     margin-right: 50px;
     display: flex;
     flex-direction: row;
-    margin-top: -35px;
+    margin-top: -90px;
 }
 .sel_hero{
     text-align: center;
@@ -33,40 +32,65 @@ body{
 .container_select{
 
     justify-content: space-between;
-    mso-padding-between: 20px;
+    mso-padding-between: 18px;
     margin-top: 32px;
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-column-gap: 20.41px;
-    grid-row-gap: 20.83px;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
 }
 
 .container_select > img{
     justify-content: space-between;
-    width: 152.17px;
-    height: 230.8px;
-    border: 2px solid ghostwhite;
-    background: #343232;
-    object-fit:cover
+    width: 133.17px;
+    height: 202.8px;
+    border: 4px solid ghostwhite;
+    background: #032213;
+    object-fit: contain;
+    border-radius: 5px;
 }
-.container_select >img :hover{
-    background:linear-gradient(transparent 10%, #c4bdbd);
-    transform: scale(1.1);
+.container_select > span{
+    justify-content: center;
+    width: 133.17px;
+    height: 202.8px;
+    border: 4px solid #ffffff;
+    background: #032213;
+    font-size: 26.3949px;
+    line-height: 33px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: rgba(252, 206, 57, 0.3);
+    border-radius: 5px;
+}
+.container_select >img:hover{
+    background:#FCCE39;
+    border: 4px solid #0C8247 ;
+}
+.PreNextBT{
+    background-color: white;
+    border:0;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: DungGeunMo;
+    color: #0C8247;
 }
 .chosen_hero{
-    width: 413px;
-    height: 639px;
-    margin-left: 26.83px;
+    width: 361px;
+    height: 559px;
+    margin-left: 16.83px;
     font-size: 70px;
     position: relative;
     font-weight: bolder;
+    margin-top: -78px;
 }
 .image_chosen{
-    position: relative;
-    width: 413px;
-    height: 639px;
-    object-fit:cover;
-    background: #343232;
+    position: absolute;
+    width: 361px;
+    height: 500px;
+    object-fit: contain;
+    background: #032213;
     border-radius: 10px 10px 0px 0px;
 }
 .image_inform{
@@ -82,27 +106,30 @@ body{
 }
 .Chr_Name_box{
     position: absolute;
-    width: 403px;
-    height: 108px;
-    top: 535px;
+    width: 338px;
+    height: 95px;
+    top: 483px;
     background: #0C8247;
     border-radius: 0px 0px 10px 10px;
 }
 .input_box{
     position: absolute;
-    width: 380px;
+    width: 330px;
     height: 54px;
-    top : 570px;
+    top : 515px;
     left: 15px;
-    font-size: 45px;
-    background: #343232;
+    font-size: 40px;
+    background: #0C8247;
     border:0;
     border-radius: 5px;
     color: #FCCE39;
     font-family: DungGeunMo;
 }
+.input_box::placeholder{
+    color: #FCCE39;
+}
 .category_button_box{
-    margin-top: -10px;
+    margin-top: -50px;
     align-items: center;
     justify-content: space-between;
 }
@@ -119,32 +146,33 @@ body{
 .complete_button_wrapper{
     position: absolute;
     width: 960px;
-    margin-top:800px;
-    margin-left: 330px;
+    margin-top:850px;
+    margin-left: 720px;
 
 }
+
 .complete_button1{
     position: absolute;
-    width: 300px;
-    height: 50px;
+    width: 263px;
+    height: 44px;
     font-family: DungGeunMo;
-    font-size: 23.8px;
-    line-height: 28px;
+    font-size: 18.8px;
+    line-height: 18px;
     color:rgba(12, 130, 71, 1);
-    border-color: #dee2e6;
+    border: 0;
     background: #FCCE39;
     border-radius: 5px;
     margin-top: -70px;
 }
 .complete_button2{
     position: absolute;
-    width: 300px;
-    height: 50px;
+    width: 263px;
+    height: 44px;
     font-family: DungGeunMo;
-    font-size: 23.8px;
-    line-height: 28px;
+    font-size: 18.8px;
+    line-height: 18px;
     color:white;
-    border-color: #DDDDDD;
+    border: 0;
     background: #DDDDDD;
     border-radius: 5px;
     margin-top: -70px;

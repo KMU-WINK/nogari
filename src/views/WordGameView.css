@@ -1,0 +1,71 @@
+.main_wordgame{
+    margin: 0 auto;
+    position: relative;
+    width: 822px;
+    height: 740px;
+    overflow: hidden;
+}
+.boxwrapper{
+    margin: 0 auto;
+}
+.quizBox {
+    width: 422px;
+    height: 146px;
+    background: #0C8247;
+    border-radius: 15px;
+    /*text-align: center;*/
+    margin: 25.28px auto;
+    font-size: 22.2893px;
+    line-height: 26px;
+    letter-spacing: 0.01em;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.quizBox > div{
+    font-family: DungGeunMo;
+    font-size: 80px;
+    line-height: 70px;
+    text-align: center;
+    letter-spacing: 0.15em;
+    width: 80px;
+    height: 80px;
+    color: #FCCE39;
+    float: left;
+    border-radius: 10px;
+    border: 3px solid #000000;
+    background: #08552E;
+}
+.input{
+    width: 190px;
+    height: 35px;
+    background: #08552E;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    font-size: 30px;
+    text-align: center;
+    color: #FCCE39;
+    font-family: DungGeunMo;
+
+
+}
+.footer{
+    margin: 74px auto ;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-column-gap: 20.41px;
+    grid-row-gap: 11px;
+}
+.footer > div{
+    color: #FFFFFF;
+    width: 105.17px;
+    height: 159.8px;
+    background: #032213;
+    border-radius: 5px;
+
+}
+

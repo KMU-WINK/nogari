@@ -8,12 +8,7 @@ export async function getWordGameCategory() {
   return category.data();
 }
 
-export async function getRoomInfo(roomNumber, callback) {
-  db.collection("rooms").doc(roomNumber).onSnapshot((doc) => {
-    callback(doc.data());
-  });
-}
-
-export function joinRoom() {
-
+export async function getPlayers(roomId) {
+  const players = await db.collection('game').doc(roomId).get();
+  return players.data();
 }

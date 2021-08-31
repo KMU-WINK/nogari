@@ -1,12 +1,7 @@
 import firebase from './firebase-manager';
+import {getRoomdata} from "./rooms";
 
 const db = firebase.firestore();
-
-
-export async function getUserInfo(userId) {
-  const user = await db.collection("users").doc(userId).get();
-  return user.data();
-}
 
 export async function getRoomInfo(roomNumber, callback) {
   db.collection("rooms").doc(roomNumber).onSnapshot((doc) => {
@@ -14,6 +9,10 @@ export async function getRoomInfo(roomNumber, callback) {
   });
 }
 
-export function joinRoom() {
-
+export async function addMember(roomNumber, userId) {
+  const userArray = await getRoomdata(roomNumber);
+  userArray.members.push(userId);
+  firebase.firestore().collection("rooms").doc(roomNumber).update({
+    members : userArray.members
+  });
 }

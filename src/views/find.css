@@ -1,35 +1,58 @@
-.main{
+.find_container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
 
+.find_main{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    width: 960px;
+    justify-content: center;
+    align-content: center;
+    width: 822px;
     height: 740px;
-    overflow-y: hidden;
+    overflow: hidden;
+
 }
 .make_wrapper{
-    margin-top: 83px;
+    margin-top: 150px;
 }
 .make {
     background: #FCCE39;
-    width: 420px;
-    height: 170px;
+    width: 320px;
+    height: 130px;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 13px;
     border-radius: 8.4px;
     color: white;
 }
+.make:hover{
+    background: #0C8247;
+    width: 320px;
+    height: 130px;
+    text-align: center;
+    margin-top: 13px;
+    border-radius: 8.4px;
+    color: #FCCE39;
+}
 .RightBox{
     position: relative;
-    width: 413px;
-    height: 575.93px;
-    background: #030303;
+    margin-top: 55px;
+    width: 361px;
+    height: 559px;
+    background: #032213;
     border-radius: 8.39px;
-    margin-left: 108px;
+    margin-left: 73px;
+    z-index: 0;
 }
 .NameBox{
     position: absolute;
-    width: 413px;
-    height: 108px;
-    top:530px;
+    width: 361px;
+    height: 95px;
+    top:480px;
     background: #0C8247;
     border-radius: 0px 0px 15px 15px;
+    z-index: 1;
 }

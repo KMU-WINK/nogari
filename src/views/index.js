@@ -8,7 +8,5 @@ export { default as CreateUserView } from './CreateUserView';
 export { default as AlcoholMarbleView } from './AlcoholMarbleView';
 export { default as CreateRoomView } from './CreateRoomView';
 export { default as ChangeCharacterView } from './ChangeCharacterView';
-export { default as FindView } from './FindView';
-
-
-
+export { default as Find } from './Find';
+export { default as LiarCategoryView } from './LiarCategoryView';

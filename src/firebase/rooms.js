@@ -6,3 +6,8 @@ export async function createRoom() {
     });
     return res.id;
 }
+
+export async function getRoomdata(roomNumber) {
+    const room = await firebase.firestore().collection("rooms").doc(roomNumber).get();
+    return room.data() ?? null;
+}
