@@ -1,464 +1,218 @@
 #mainWrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 822.22px;
-  height: 740px;
-  border: solid blue 2px;
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  padding: 0;
-  margin: 0;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-#mainWrap .navi {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-#mainWrap .navi .modal {
-  background-color: lightgrey;
-  margin: 10px;
-}
-
-#mainWrap .Main {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 695.38px;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-}
-
-#mainWrap .Main .char1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
-#mainWrap .Main .gameMain {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
-#mainWrap .Main .char2 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
-#mainWrap .Main .character {
-  width: 120px;
-  height: 123.8px;
-  border-radius: 5%;
-  background-color: #000000;
-}
-
-#mainWrap .Main .userName {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 19px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-  letter-spacing: 0.01em;
-  margin-top: 10px;
-  color: #323232;
-}
-
-#mainWrap .Main .selectGameBtn {
-  position: relative;
-  width: 200px;
-  height: 40px;
-  text-align: center;
-  font-size: 18px;
-  border-radius: 5px;
-  background-color: #fcce39;
-  color: white;
-    border: none;
-}
-
-#mainWrap .Main .startBtn {
-  width: 300px;
-  height: 65.62px;
-  text-align: center;
-  font-size: 32px;
-  border-radius: 10px;
-  background-color: #fcce39;
-  color: white;
-    border: none;
-}
-#mainWrap .Main .stopBtn {
-    width: 300px;
-    height: 65.62px;
-    text-align: center;
-    font-size: 32px;
-    border-radius: 5%;
-    background-color: #DDDDDD;
-    color: white;
-    border: none;
-}
-
-#mainWrap .Main .selectedGame {
-  width: 450px;
-  height: 315.46px;
-  border-radius: 10px;
-  background-color: #0c8247;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-#mainWrap .Main .selectedGame .selecteMessage {
-  font-size: 36px;
-  color: #fcce39;
+    width: 960px;
+    height: 740px;
+    border: solid blue 2px;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    padding: 0;
+    margin: 0;
 }
 
 #menuModal #backBtn {
-  text-align: center;
-  font-size: 30px;
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  top: 10px;
-  left: 91%;
-  color: #fcce39;
-  cursor: pointer;
-}
-
-#menuModal #backBtn:hover {
-  color: black;
+    text-align: center;
+    font-size: 30px;
+    border: 1px black solid;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 94%;
+    top: 10px;
+    background-color: #726d6d7c;
 }
 
 #menuModal .menuWraper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+    bottom: 100px;
 }
 
-#menuModal .menuWraper .menuTitle {
-  font-size: 50px;
-  color: #FCCE39;
-  margin-bottom: 20px;
-  text-align: center;
+#menuModal .menuWraper div {
+    border: 3px black solid;
+    position: absolute;
+    text-align: center;
+    font-size: 50px;
 }
 
-#menuModal .menuWraper .menuRankContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+#menuModal .menuWraper :nth-child(1) {
+    width: 405px;
+    height: 650px;
 }
 
-#menuModal .menuWraper .menuRankContainer .menuRankLeft {
-  border-right: 5px black solid;
-  width: 360.1px;
-  height: 436.72px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: #08552E;
-  border-radius: 10px;
+#menuModal .menuWraper :nth-child(1) img {
+    position: absolute;
+    width: 230px;
+    height: auto;
+    top: 30%;
+    left: 25%;
 }
 
-#menuModal .menuWraper .menuRankContainer .menuRankLeft .nameTitleContainer {
-  margin-top: 20px;
+#menuModal .menuWraper :nth-child(2) {
+    left: 48%;
+    width: 405px;
+    height: 200px;
 }
 
-#menuModal .menuWraper .menuRankContainer .menuRankLeft .nameTitleContainer .LeftName {
-  font-size: 24px;
-  color: #FCCE39;
-  margin-bottom: 10px;
-  text-align: center;
+#menuModal .menuWraper :nth-child(3) {
+    left: 48%;
+    top: 35%;
+    width: 195px;
+    height: 250px;
 }
 
-#menuModal .menuWraper .menuRankContainer .menuRankLeft .nameTitleContainer .LeftTitle {
-  width: 127.7px;
-  height: 22.99px;
-  background-color: #042917;
-  color: #fcce39;
-  border-radius: 5px;
-  text-align: center;
-  line-height: 22.99px;
+#menuModal .menuWraper :nth-child(4) {
+    left: 71%;
+    top: 35%;
+    width: 195px;
+    height: 250px;
 }
 
-#menuModal .menuWraper .menuRankContainer .menuRankLeft .LeftImage {
-  width: 194.1px;
-  height: 194.1px;
-  background-color: #042213;
-  border-radius: 10px;
-  color: #fcce39;
-  text-align: center;
-  font-size: 50px;
-  line-height: 194.1px;
+#menuModal .menuWraper :nth-child(5) {
+    left: 48%;
+    top: 74%;
+    width: 195px;
+    height: 160px;
 }
 
-#menuModal .menuWraper .menuRankContainer .menuRankLeft .LeftBadgeContainer {
-  color: #fcce39;
-  font-size: 14px;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  margin-left: 20px;
+#menuModal .menuWraper :nth-child(6) {
+    left: 71%;
+    top: 74%;
+    width: 195px;
+    height: 160px;
 }
 
-#menuModal .menuWraper .menuRankContainer .menuRankLeft .LeftBadgeContainer .LeftBadges {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.navi {
+    border-bottom: 3px dotted;
 }
 
-#menuModal .menuWraper .menuRankContainer .menuRankLeft .LeftBadgeContainer .LeftBadges .LeftBadge {
-  border-radius: 50%;
-  width: 19.94px;
-  height: 19.94px;
-  background-color: #FCCE39;
-  color: #000000;
-  text-align: center;
-  font-weight: bold;
-  line-height: 19.94px;
-  margin-top: 5px;
-  margin-right: 5px;
+.navi .modal {
+    display: inline-block;
+    background-color: aqua;
+    margin: 10px;
+    border: 3px solid black;
 }
 
-#menuModal .menuWraper .menuRankContainer .menuRankRight {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 360.1px;
-  height: 436.72px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: #05391F;
-  border-radius: 10px;
+.Main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    width: 960px;
+    height: 693px;
 }
 
-#menuModal .menuWraper .menuRankContainer .menuRankRight .scrollBtnContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 360.1px;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  font-size: 20px;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  padding-top: 10px;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+.Main .char1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
 }
 
-#menuModal .menuWraper .menuRankContainer .menuRankRight .scrollBtnContainer .leftBtn {
-  color: #FCCE39;
-  cursor: pointer;
+.Main .gameMain {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center;
 }
 
-#menuModal .menuWraper .menuRankContainer .menuRankRight .scrollBtnContainer .leftBtn:hover {
-  color: #000000;
+.Main .char2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
 }
 
-#menuModal .menuWraper .menuRankContainer .menuRankRight .scrollBtnContainer .rightBtn {
-  color: #FCCE39;
-  cursor: pointer;
+.Main .character {
+    position: relative;
+    width: 137px;
+    height: 141.34px;
+    border: 2px black solid;
+    border-radius: 5%;
+    margin: 0px;
 }
 
-#menuModal .menuWraper .menuRankContainer .menuRankRight .scrollBtnContainer .rightBtn:hover {
-  color: #000000;
+.Main .userName {
+    position: relative;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16.6079px;
+    line-height: 19px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.01em;
+    margin-top: 10px;
+    color: #323232;
 }
 
-#menuModal .menuWraper .menuRankContainer .menuRankRight .menuRankRightWrapper {
-  width: 278.38px;
-  height: 100.45px;
-  border-bottom: 1px solid rgba(252, 206, 57, 0.3);
-  color: #FCCE39;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  margin: 5px;
+.Main .selectGameBtn {
+    position: relative;
+    width: 200px;
+    height: 40px;
+    border: 2px black solid;
+    text-align: center;
+    font-size: 30px;
 }
 
-#menuModal .menuWraper .menuRankContainer .menuRankRight .menuRankRightWrapper .menuRangkRightContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+.Main .startBtn {
+    position: relative;
+    width: 320px;
+    height: 70px;
+    text-align: center;
+    border: 2px black solid;
+    font-size: 30px;
 }
 
-#menuModal .menuWraper .menuRankContainer .menuRankRight .menuRankRightWrapper .menuRangkRightContainer .rightRank {
-  font-size: 14px;
+.Main .selectedGame {
+    position: relative;
+    width: 485px;
+    height: 340px;
+    border: 3px black solid;
 }
 
-#menuModal .menuWraper .menuRankContainer .menuRankRight .menuRankRightWrapper .menuRangkRightContainer .rightTitle {
-  width: 127.7px;
-  height: 22.99px;
-  font-size: 12px;
-  background-color: #042213;
-  border-radius: 5px;
-  text-align: center;
-  line-height: 22.99px;
+.Main .selectedGame .selecteMessage {
+    display: inline-block;
+    font-size: 30px;
+    text-align: center;
+    width: 250px;
+    left: 170px;
 }
 
-#menuModal .menuWraper .menuRankContainer .menuRankRight .menuRankRightWrapper .menuRangkRightContainer .rightBadgeContainer {
-  font-size: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-#menuModal .menuWraper .menuRankContainer .menuRankRight .menuRankRightWrapper .menuRangkRightContainer .rightBadgeContainer .rightBadges {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-#menuModal .menuWraper .menuRankContainer .menuRankRight .menuRankRightWrapper .menuRangkRightContainer .rightBadgeContainer .rightBadges .rightBadge {
-  background-color: #000000;
-  border-radius: 50%;
-  width: 12.77px;
-  height: 12.77px;
-  text-align: center;
-  font-weight: bold;
-  margin-top: 5px;
-  margin-right: 3px;
-}
-
-#menuModal .menuWraper .menuRankContainer .menuRankRight .menuRankRightWrapper .rightImage {
-  width: 100px;
-  height: 100px;
-  background-color: #042213;
-  border-radius: 10px;
-  text-align: center;
-  line-height: 100px;
+.Main .selectedGame .infoBtn {
+    position: relative;
+    top: 5.49%;
+    bottom: 83.88%;
+    background: #737171;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    color: aliceblue;
 }
 /*# sourceMappingURL=WatingRoom.css.map */
-
-.gameTitle {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 140px;
-    font-size: 36px;
-    color: #fcce39;
-    width: 100%;
-}
-.gameContainer {
-    position: relative;
-}
-.gameContainer:before {
-    position: absolute;
-    width: 450px;
-    height: 65px;
-    top: 50%; transform: translateY(-50%);
-    right: 0;
-    content: "";
-    background-color: #05180F;
-    opacity: 0.55;
-}
-.main-info-btn {
-    font-size: 18px;
-    cursor: pointer;
-}
-.main-info-btn:before {
-    content: "i";
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #fcce39;
-    position: absolute;
-    right: 12px; top: 12px;
-}
